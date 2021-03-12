@@ -17,39 +17,34 @@ interface Props {
     loans: Loan[]
 }
  class BudgetDiff extends React.Component<Props>{
-    state={
-        budgets:[]
-    }
-    componentDidMount(){
-        
-    }
+  
     render() {
 
         return (<>
             <h2>Budget Diff View</h2>
             {this.props.budgets.map((budget: Budget) => {
                 return (
-                    <>
-                    <div>
+                    
+                    <div key={"budget"+ budget.id}>
                         <hr></hr>
                         <h3>{budget.projectName}: {budget.amount}</h3>
                         <hr></hr>
                         <b>Available Collateral</b>
                         <div>
-                            {this.props.collateral.filter((singleColat) => singleColat.budgetId === budget.id).map((filteredColat) => <p>{filteredColat.description}: ${filteredColat.value} </p>)}
+                            {this.props.collateral.filter((singleColat) => singleColat.budgetId === budget.id).map((filteredColat) => <p key={filteredColat.id}>{filteredColat.description}: ${filteredColat.value} </p>)}
                         </div>
                         <b>Approved Loans</b>
                         <div>
-                            {this.props.loans.filter((loan) => loan.budgetId === budget.id).map((filteredLoan) => <p>{filteredLoan.bank}: ${filteredLoan.amount}
+                            {this.props.loans.filter((loan) => loan.budgetId === budget.id).map((filteredLoan) => <div key={"filteredload" + filteredLoan.id}>{filteredLoan.bank}: ${filteredLoan.amount}
                                 <ul>
                                     <li>Terms:{filteredLoan.terms} years</li>
                                     <li>Interest Rate: {filteredLoan.interest * 100}%</li>
                                     </ul>
-                                </p>)}
+                                </div>)}
                         </div>
 
                     </div>
-                    </>
+                    
                 )
 
             })}
