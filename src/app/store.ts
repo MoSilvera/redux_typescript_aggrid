@@ -1,9 +1,9 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-
+import budgetsReducer from '../reducers/budgetSlice'
 
 export const store = configureStore({
   reducer: {
-    
+    budgets: budgetsReducer
   },
 });
 
