@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { store } from './app/store';
 import App from './App';
 import { BrowserRouter as Router } from "react-router-dom";
+import BudgetDiff from './components/BudgetDiffList'
 
 
 test('nav bar contains proper links', () => {
@@ -19,3 +20,4 @@ test('nav bar contains proper links', () => {
   expect(getByText("Home")).toBeInTheDocument();
   expect(getByText ("Budgets")).toBeInTheDocument();
 });
+
