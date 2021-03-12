@@ -13,7 +13,7 @@ interface collateralState {
 }
 
 let initialState: collateralState = {
-    value: [{"id": 1, "budgetId": 1, "value": 700, "description":"vehicle"}, {"id": 2, "budgetId": 2, "value": 400000, "description":"real estate"},{"id": 3, "budgetId": 3, "value": 25000, "description":"diamond ring"}]
+    value: [{"id": 1, "budgetId": 1, "value": 700, "description":"vehicle"},{"id": 4, "budgetId": 1, "value": 900000, "description":"trust"}, {"id": 2, "budgetId": 2, "value": 400000, "description":"real estate"},{"id": 3, "budgetId": 3, "value": 25000, "description":"diamond ring"}]
 }
 
 export const collateralSlice = createSlice({

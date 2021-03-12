@@ -27,7 +27,32 @@ interface Props {
 
         return (<>
             <h2>Budget Diff View</h2>
-            {this.props.budgets.map((budget: Budget) => <span>{budget.amount}</span>)}
+            {this.props.budgets.map((budget: Budget) => {
+                return (
+                    <>
+                    <div>
+                        <hr></hr>
+                        <h3>{budget.projectName}: {budget.amount}</h3>
+                        <hr></hr>
+                        <b>Available Collateral</b>
+                        <div>
+                            {this.props.collateral.filter((singleColat) => singleColat.budgetId === budget.id).map((filteredColat) => <p>{filteredColat.description}: ${filteredColat.value} </p>)}
+                        </div>
+                        <b>Approved Loans</b>
+                        <div>
+                            {this.props.loans.filter((loan) => loan.budgetId === budget.id).map((filteredLoan) => <p>{filteredLoan.bank}: ${filteredLoan.amount}
+                                <ul>
+                                    <li>Terms:{filteredLoan.terms} years</li>
+                                    <li>Interest Rate: {filteredLoan.interest * 100}%</li>
+                                    </ul>
+                                </p>)}
+                        </div>
+
+                    </div>
+                    </>
+                )
+
+            })}
         </>)
     }
 }
