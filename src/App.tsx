@@ -1,11 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { ApplicationViews } from './components/ApplicationViews'
+import { Navbar } from './components/Navbar'
 
 function App() {
   return (
     <>
-    <h1>App.tsx</h1>
+    <Navbar />
+    <ApplicationViews />
     </>
   );
 }
