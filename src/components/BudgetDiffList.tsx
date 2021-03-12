@@ -17,12 +17,7 @@ interface Props {
     loans: Loan[]
 }
  class BudgetDiff extends React.Component<Props>{
-    state={
-        budgets:[]
-    }
-    componentDidMount(){
-        
-    }
+  
     render() {
 
         return (<>
