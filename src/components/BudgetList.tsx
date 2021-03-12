@@ -39,7 +39,6 @@ export const BudgetList = () => {
             "new_value": params.newValue,
             "row_index": params.node?.rowIndex
         }
-        console.log(param_obj)
         dispatch(editBudget(param_obj))
         return true
     }

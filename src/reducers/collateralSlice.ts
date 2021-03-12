@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AppThunk, RootState } from '../app/store';
 
-export interface collateral {
+export interface Collateral {
     id: number,
     budgetId: number,
     value: number,
@@ -9,7 +9,7 @@ export interface collateral {
 
 }
 interface collateralState {
-    value : collateral[]
+    value : Collateral[]
 }
 
 let initialState: collateralState = {

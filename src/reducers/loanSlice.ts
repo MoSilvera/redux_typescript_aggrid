@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AppThunk, RootState } from '../app/store';
 
-export interface loan {
+export interface Loan {
     id: number,
     budgetId: number,
     amount: number,
@@ -11,7 +11,7 @@ export interface loan {
 
 }
 interface loanState {
-    value : loan[]
+    value : Loan[]
 }
 
 let initialState: loanState = {
