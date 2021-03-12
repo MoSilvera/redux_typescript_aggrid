@@ -1,5 +1,10 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export const BudgetDiffList = () => {
+export default class BudgetDiff extends Component {
 
+    render() {
+        return (<>
+            <h2>Budget Differential Component</h2>
+        </>)
+    }
 }
