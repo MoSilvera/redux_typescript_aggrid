@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AppThunk, RootState } from '../app/store';
 
-interface Budget {
+export interface Budget {
     id: number,
     customerId: number,
     amount: number,
