@@ -11,15 +11,12 @@ import { RowNode, RowNodeEvent } from 'ag-grid-community/dist/lib/entities/rowNo
 export const BudgetList = () => {
     const budgets = useSelector(selectBudgets);
     const dispatch = useDispatch();
-    const [gridColumnApi, setGridColumnApi] = useState(null);
     const [newBudget, setNewBudget] = useState({})
 
     const [rowData, setRowData] = useState([
         ...budgets
     ]);
     useEffect(() => {
-        console.log(budgets)
-        console.log("use effect")
         setRowData(budgets)
     }, [budgets])
 

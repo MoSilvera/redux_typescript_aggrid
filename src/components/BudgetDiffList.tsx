@@ -1,10 +1,25 @@
 import React, { Component } from 'react'
+import { Budget } from '../reducers/budgetSlice'
+import { connect, Connect } from 'react-redux'
 
-export default class BudgetDiff extends Component {
+const mapStateToProps = (state: {index:string, message:[]}) => {
+    return {budgets: {state}}
+}
 
+
+ class BudgetDiff extends Component {
+    state={
+        budgets:[]
+    }
+    componentDidMount(){
+        
+    }
     render() {
+
         return (<>
-            <h2>Budget Differential Component</h2>
+            {this.state.budgets.map((budget: Budget) => <span>{budget.amount}</span>)}
         </>)
     }
 }
+
+export default connect(mapStateToProps)(BudgetDiff)
